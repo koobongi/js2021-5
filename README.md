@@ -12,14 +12,34 @@
 조건문에는 if문과 switch문이 대표적이다.
 <br />
 
-
- <h5>● switch 조건문</h5>
+<h5>● switch 조건문</h5>
  if…else 문의 조건식이 반드시 불리언 값으로 평가되는 반면,
 switch 문의 표현식은 불리언 값보다는 문자열, 숫자 값인 경우가 많다.
 if…else 문은 논리적 참, 거짓으로 실행할 코드 블록을 결정한다.
 하지만 switch 문은 논리적 참, 거짓보다는 다양한 상황(case)에 따라 실행할 코드 블록을 결정할 때 사용한다. <br />
 <br />
+#####삼항 연산자 <br />
+● 기본 형태 <불 표현식> ? <참> : <거짓> <br />
+//참과 거짓 위치에 불 자료형 <br />
+console.log (nmber % 2 == 0? true : false); <br />
+//참과 거짓 위치에 문자열 자료형 <br />
+console.log (nmber % 2 == 0 ? 짝수 : 홀수); <br />
+###### ex) let number = 31; <br />
+######console.log(number % 2 == 0?"짝수":"홀수"); <br />
+<br />
+삼항 연산자를 활용한 변수 초기화<br />
 
+* 변수가 undefined일 때만 초기화 <br />
+ex) //변수를 선언합니다 <br />
+let test; <br />
+//삼항 연산자로 해당 변수가 undefined인지 확인하고 초기화합니다 <br />
+test = test ? test : "초기화합니다_1"; <br />
+console.log(test); <br />
+//삼항 연산자로 해당 변수가 undefined인지 확인하고 초기화합니다 <br />
+test = test ? test : "초기화합니다_2"; <br />
+console.log(test); <br />
+<br />
+####반복문
 
 
 ---
