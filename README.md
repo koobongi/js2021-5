@@ -2,16 +2,47 @@
 
 ## [04월13일]
 
-#### 함수
+### 함수
 
-##### 익명함수
+#### 익명함수
 
 * 이름을 붙이지 않고 함수 생성 <br />
 * 함수를 호출하면 함수 내부의 코드 덩어리가 모두 실행 <br />
   ex) let <함수이름> = function() { }; <br />
+  ex2)script <br />
+  //익명 함수 선언 및 매개변수 사용 <br />
+  var fusion = function( a, b ) <br />
+  { <br />
+    var z = a + b; <br />
+    return z; <br />
+  }; <br />
+  //익명 함수의 변수를 출력 및 인수 입력 <br />
+  document.write( fusion( "Hello", "World!" ) ); <br />
+/script <br />
+결과 : HelloWorld! <br />
+<br />
 
-  ##### 선언적 함수
- * 이름을 붙여 함수를 생성
+#### 선언적 함수
+ * 이름을 붙여 함수를 생성 <br />
+ ex) function <함수이름> () { } <br />
+ <br />
+ 
+ #### 익명함수와 선언적 함수의 차이점
+ * 익명함수: 다른 일반 문장과 같이 run time시에 실행됩니다 글로벌영역에 등록되지 않습니다.<br />
+ * 선언적 함수: 글로벌 영역에 먼저 등록 되어 run time 전에 이미 등록이 되어 있습니다. <br />
+ <br />
+
+#### 화살표 함수[ECMAScript6]
+* '하나의 표현식을 리턴하는 함수'를 만들 때는 중괄호 생략 가능 <br />
+ex) () => {} <br />
+ex2)let foo = () => {
+    console.log("첫번줄");
+    console.log("두번째 줄");
+};
+
+foo();
+console.log(foo);
+ 
 
 ## [04월06일]
 
