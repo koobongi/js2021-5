@@ -35,14 +35,50 @@
 #### 화살표 함수[ECMAScript6]
 * '하나의 표현식을 리턴하는 함수'를 만들 때는 중괄호 생략 가능 <br />
 ex) () => {} <br />
-ex2)let foo = () => {
-    console.log("첫번줄");
-    console.log("두번째 줄");
-};
+ex2)let foo = () => { <br />
+    console.log("첫번줄"); <br />
+    console.log("두번째 줄"); <br />
+}; <br />
+<br />
+foo(); <br />
+console.log(foo); <br />
+<br />
 
-foo();
-console.log(foo);
- 
+### 함수의 기본 형태
+function <함수이름>{<매개 변수>} { <br />
+  <함수코드> <br />
+  return <리턴 값> <br />
+} <br />
+
+#### 매개변수로 넣은 숫자를 제곱하는 power() 함수 생성
+ex) function power(x) { <br />
+  return x * x; <br />
+} <br />
+console.log(power(10)); <br />
+console.log(power(20)); <br />
+결과 = 100 400 <br />
+<br />
+
+#### 리턴하는 함수의 기본 형태
+ex) function (<매개 변수>, <매개 변수>) { <br />
+  let output = <초깃값>; <br />
+  // output 계산 <br />
+  return output; <br />
+} <br />
+
+#### 콜백함수
+파라미터로 함수를 전달받아, 함수의 내부에서 실행하는 함수 <br />
+콜백함수는 이름이 없는 '익명의 함수'를 사용한다. 함수의 내부에서 실행되기 떄문에 이름을 붙이지 않아도 된다. <br />
+
+ #### 숫자변환 함수
+ * parselnt() : 문자열을 정수로 변환합니다 <br />
+ * parseFloat() : 문자열을 실수로 변환합니다 <br />
+
+ #### 타이머 함수
+ * '특정 시간 후에' 또는 '특정 시간마다' 어떤 일을 할 때 사용 <br />
+ * 시간은 밀리초로 지정, 1초를 나타내려면 1000(밀리초)을 입력 <br />
+ * setTimeout(함수,시간) : 특정 시간 후에 함수를 실행합니다. <br />
+ * setlnterval(함수,시간) : 특정 시간마다 함수를 실행합니다.
 
 ## [04월06일]
 
