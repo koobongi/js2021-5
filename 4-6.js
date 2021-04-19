@@ -8,3 +8,4 @@ for (let i in foo) {
 for (let item of foo) {
     console.log(item)
 }
+//123123 test
