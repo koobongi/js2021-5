@@ -67,7 +67,7 @@ ex ) function <생성자명>() { <br />
 1) new 키워드를 통하영 생성자 함수를 호출 합니다. <br />
 ex)var 생성자 = new 생성자명(); <br />
 2)생성자 함수 생성 과정 분석
-<img src ="img/js.1.jpg">
+![js.1.jpg](img/js.1.jpg)
 
 ---
 ## [04월13일]
