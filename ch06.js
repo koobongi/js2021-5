@@ -18,13 +18,41 @@
 //     console.log(`${key}: ${foo[key]}`);
 // }
 
-let foo = {
-    name: "건조 망고",
-    price: 1200,
-    print: function () {
-        console.log(`${this.name} - ${this.price}`);
-    }
-};
+// let foo = {
+//     name: "건조 망고",
+//     price: 1200,
+//     print: function () {
+//         console.log(`${this.name} - ${this.price}`);
+//     }
+// };
 
-foo.print();
+// foo.print();
 
+//
+
+// let products = [
+//     {name: '사과', price: 1200},
+//     {name: '배', price: 1500},
+//     {name: '사자두', price: 1000},
+//     {name: '딸기', price: 2000},
+//     {name: '바나나', price: 1500},
+// ];
+
+// function printProduct(bar) {
+//     console.log(`${bar.name} - ${bar.price}`);
+// }
+
+// for (let foo of products) {
+//     printProduct(foo);
+// }
+
+//
+
+function Product(foo, bar) {
+    this.foo1 = foo;
+    this.bar1 = bar;
+}
+
+let product = new Product("바나나", 1200);
+
+console.log(product);
