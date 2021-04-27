@@ -64,18 +64,53 @@
 // });
 
 //
-let inputA = '52';
-let inputB = '52.273';
-let inputC = '1403A';
+// let inputA = '52';
+// let inputB = '52.273';
+// let inputC = '1403A';
 
-console.log(parseInt(inputA));
-console.log(parseFloat(inputA));
+// console.log(parseInt(inputA));
+// console.log(parseFloat(inputA));
 
-console.log(parseInt(inputB));
-console.log(parseFloat(inputB));
+// console.log(parseInt(inputB));
+// console.log(parseFloat(inputB));
 
-console.log(parseInt(inputC));
+// console.log(parseInt(inputC));
 
-console.log(Number(inputA));
-console.log(Number(inputB));
-console.log(Number(inputC));
+// console.log(Number(inputA));
+// console.log(Number(inputB));
+// console.log(Number(inputC));
+
+//
+
+// let foo =setInterval(() => {
+//    console.log("인터벌 1초 경과!!!");
+// }, 1000)
+
+// setTimeout(( )=> {
+//    clearInterval(foo);
+// }, 6000)
+
+//
+// let foo;
+// foo =10;
+// foo =20;
+// foo = "세번째";
+
+// console.log(foo);
+
+// let foo;
+// foo = () => {console.log("1st");}
+// foo = () => {console.log("2nd");}
+
+// foo();
+
+let name = "dong"
+foo =() => {
+   let name ="synn";
+   console.log(this.name);
+};
+function foo() {
+   console.log("this.name");
+};
+
+foo();
