@@ -1,7 +1,13 @@
-let foo = 273;
+function Construtor() {}
+Construtor.foo = 273;
+Construtor.bar = function () {}
 
-Number.prototype.method = function() {
-    return "hello";
-}
+console.log(Construtor.foo);
+console.log(Construtor.bar);
 
-console.log(foo.method());
+
+//
+// let foo = 25.123
+
+// console.log(foo.toFixed(1)); // 25.1
+// console.log(foo.toFixed(3));

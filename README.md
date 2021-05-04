@@ -32,6 +32,17 @@ null은 '의도적으로 값이 없음'을 명시하기 위한 기본 데이터 
 
 참고 사이트 = https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects <br />
 
+#### Number 객체
+
+Number 객체는 숫자 값으로 작업할 수 있게 해주는 래퍼wrapper 객체입니다. Number 객체는 Number() 생성자를 사용하여 만듭니다. 원시 숫자 자료형은 Number() 함수를 사용해 생성합니다. <br />
+
+Number 객체의 주된 용도는 다음과 같습니다. <br />
+* 만약 인수를 숫자로 변환할 수 없으면 NaN을 리턴합니다.
+* 생성자로써 사용하지 않으면(new 연산자를 사용하지 않으면) Number를 사용하여 형변환을 할 수 있습니다. <br />
+
+![js.3.JPG](./img/js.3.JPG) <br />
+![js.4.JPG](./img/js.4.JPG) <br />
+
 #### 자료형
 
 ##### 숫자형
