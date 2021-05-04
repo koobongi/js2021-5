@@ -27,23 +27,23 @@ null은 '의도적으로 값이 없음'을 명시하기 위한 기본 데이터 
 >Math <br />
 >Date <br />
 >RegExp <br />
+
 ---
+
 참고 사이트 = https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects <br />
-<br />
-기본 자료형과 객체 자료형의 차이점 : 기본 자료형은 객체가 아니므로 <br />
 
-##### 자료형
+#### 자료형
 
-###### 숫자형
+##### 숫자형
 
 ```
-let number = 123; <br />
-n= 123.4; <br />
+let number = 123; 
+n= 123.4; 
 ```
 숫자형은 정수 및 실수형을 나타낸다. <br />
 숫자형과 관련된 연산은 곱셈,나눈셈,덧셈,뺄셈 등이 대표적이다. <br />
 
-###### 문자형
+##### 문자형
 
 문자열을 따옴표로 묶는다
 ```
@@ -53,6 +53,41 @@ let backtick = `Hello ${name}`; //역 따옴표(백틱)
 ```
 자바스크립트는 큰따옴표와 작은따옴표의 차이를 두지 않는다. <br />
 역 따옴표로 변수나 표현식은 감싸고 ${...}안에 넣어주면 문자열 중간에 편리하게 넣을 수 있다. <br />
+```
+let name = 'kim';  
+alert(`Hello ${name}`);  
+alert(`1+2 = ${1 + 2}`);  
+```
+
+##### 불린형
+
+불린형은 true 와 false 두 가지 값만 갖는 자료형이다. <br />
+긍정이나 부정을 의미하는 값을 저장할 떄 사용한다, true는 긍정 false는 부정을 의미한다. <br />
+```
+let isGreater = 4 > 1;  
+alert(isGreater); // true;  
+```
+불린형은 논리 연산자에서 주로 쓰인다. <br />
+
+##### undefined 값
+
+undefined는 '값이 할당되지 않은 상태'를 나타낸다 <br />
+변수는 선언했지만 값을 할당하지 않았다면 해당 변수에 undefined가 자동으로 할당된다 <br />
+```
+let name;
+alert(name); // 'undefined' 가 출력된다.
+```
+
+##### typeof 연산자
+
+typeof 연산자는 인수의 자료형을 변환한다. <br />
+자료형에 따라 처리 방식을 다르게 하고싶거나 변수의 자료형을 알아내고자 할떄 사용한다. <br />
+```
+typeof undefined // "undefined"  
+typeof 0 // "number"  
+typeof true // "boolean"  
+typeof "foo" // "string"  
+```
 
 ---
 
