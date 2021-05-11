@@ -1,11 +1,17 @@
-let foo = "좋은 아침입니다.";
+//
+let foo = new Date();
+console.log(foo);
 
-if (foo.indexOf('아침')>=0) {
-    console.log("굿모닝");
-}
-else {
-    console.log("굿나잇");
-}
+
+//
+// let foo = "좋은 아침입니다.";
+
+// if (foo.indexOf('아침')>=0) {
+//     console.log("굿모닝");
+// }
+// else {
+//     console.log("굿나잇");
+// }
 
 
 //
