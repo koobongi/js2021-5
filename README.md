@@ -20,18 +20,32 @@ Month를 나타내는 '월'은 0부터 시작 : 0 > 1월, 11 > 12월 <br />
 
 Date 객체 <br />
 getOO() 형태 메소드, setOO() 형태 메소드 : FullYear, Month, Day, Hours, Minutes, Seconds 등 사용 <br />
+
 ![js.5.JPG](./img/js.5.JPG) <br />
 <br />
 시간 더하기 : 현재 시간에 1년, 11개월, 7일을 더해 출력(현재 시간 : 2016년 8월 16일) <br />
 
->let date = new Date(); // 현재 시간을 구한다
->console.log(date); // 출력1
->date.setFullYear(date.getFullYear()+1);
->date.setMonth(date.getMonth()+11);
->date.setDate(date.getDate()+3);
->console.log(date); //출력2
->결과 : 2016-08-15T21:57:04,200Z 
->결과 : 2016-07-18T21:57:04,200Z 
+>let date = new Date(); // 현재 시간을 구한다 <br />
+>console.log(date); // 출력1 <br />
+>date.setFullYear(date.getFullYear()+1); <br />
+>date.setMonth(date.getMonth()+11); <br />
+>date.setDate(date.getDate()+3); <br />
+>console.log(date); //출력2 <br />
+>결과 : 2016-08-15T21:57:04,200Z <br />
+>결과 : 2016-07-18T21:57:04,200Z <br />
+
+#### Array 객체
+
+##### 배열이란 ?
+
+배열은 다수의 변수들을 가지고 있는 하나의 객체이다("list-like objects"). 배열 객체는 변수에 저장 해서 사용 할 수 있고, 변수에 저장된 다른 값들과 거의 동일한 방식으로 쓸 수 있다. 일반적인 값들과 배열의 다른점은 내부의 값에 각각 접근할 수 있으며, 루프를 통해 매우 효율적으로 작업이 가능하다는 것이다. 예를 들어 우리가 흔히 보는 영수증의 제품목록, 가격 등이 배열이라고 볼 수 있으며 그 가격들의 총합을 루프를 통하여 구할 수 있다. <br />
+만약 배열이 없다면 다수의 값이 있을 때 각 값의 하나의 변수에 일일이 저장해야 하는 문제가 생길 것이며, 해당 값들을 출력하거나 연산할 때 한땀한땀 개고생 해야한다. 이때문에 코드를 작성하는데 오래걸리며, 비효율적이고 실수를 할 가능성이 높아진다. <br />
+<br />
+
+![js.6.JPG](./img/js.6.JPG) <br />
+
+![js.7.JPG](./img/js.7.JPG) <br />
+
 
 
 ---
