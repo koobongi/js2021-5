@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hello</title>
+    <script src="./underscore-umd-min.js"></script>
     <script>
-       alert('Hello World...!');
-    </script>
-    <script src="4-6.js"></script>
+        let foo = [
+            {
+                name: '고구마',
+                price: 1000,
+            },
+            {
+                name: '감자',
+                price: 500,
+            },
+            {
+                name: '바나나',
+                price: 1500,
+            },
+        ];
+        const bar = _.sortBy(foo, (item) => item.name);
+        console.log(bar);
+        console.log("==============");
+        const foobar = _(foo).sortBy(foo, (item) => item.name);
+        console.log(foobar);
+  </script>
+    </head>
+    <body>
 
-</head>
-<body>
- 
-    <script type="text/javasript" src="hello.js"></script>
-   
-</body>
+    </body>
 </html>
