@@ -28,13 +28,35 @@ uncaughtException : 예외가 일어날 떄 발생합니다 <br />
 Node.js가 제공하는 객체의 이벤트 : https://nodejs.org/en/docs/ <br />
 process 객체 : https://nodejs.org/dist/latest-v6.x/docs/api/process.html <br />
 <br />
-이벤트 매개 변수 : 이벤트 핸들러의 매개 변수로 전달되는 매개 변수
+이벤트 매개 변수 : 이벤트 핸들러의 매개 변수로 전달되는 매개 변수 <br />
+ex) exit 이벤트의 이벤트 매개 변수 <br />
 
 >process.on('exit', (code) => { <br />
   console.log(`About to exit with code: ${code}'); <br />
 }); <br />
 
+#### OS 모듈
 
+OS 모듈은 실제 개발에서 많이 사용되는 모듈은 아니지만 운영체제와 시스템의 정보를 가져올 수 있는 모듈입니다. CPU나 메모리, 디스크 용량이 얼마나 남았는지 확인이 필요할 때 사용합니다. 즉 사용자가 실행하는 환경에 따라서 값이 다르게 나옵니다.  <br />
+
+![js.11.JPG](./img/js.11.JPG) <br />
+
+![js.12.JPG](./img/js.12.JPG) <br />
+
+#### url 모듈
+
+![js.13.JPG](./img/js.13.JPG) <br />
+
+#### File System 모듈
+
+파일 처리와 관련된 작업을 하는 모듈로, 보통 FileSystem을 줄여서 fs 모듈이라고 줄여 부릅니다. 노드에서 가장 중요한 모듈 중 하나입니다.  <br />
+대부분의 메소드들이 동기/비동기로 나뉘는데, Sync라는 이름이 붙어있는 메소드가 동기방식을 사용한다고 보면 됩니다. <br />
+동기적 읽기 방식을 사용하면 파일을 읽으면서 다른 작업을 동시에 할 수 없습니다. 하지만 비동기적으로 읽으면 파일을 읽으면서 다른 작업도 동시에 수행할 수 있고, 파일을 다 읽으면 매개변수 callback으로 전달한 함수가 호출됩니다. 비동기 형식은 항상 마지막 인수가 수행 완료 시 호출할 콜백 함수로 작성되어야 합니다. <br />
+주로 비동기적 형식을 많이 사용하지만, 서버 시작 시 설정 파일을 읽는 작업과 같이 동기적 형식이 더 적절한 경우도 있습니다. [options]에는 보통 인코딩 방식을 쓰며, 웹에서는 UTF-8을 주로 사용합니다. <br />
+* fs.readFile(filename, [options], callback) : filename의 파일을 [options]의 방식으로 읽은 후 callback으로 전달된 함수를 호출합니다. (비동기적) <br />
+* fs.readFileSync(filename, [options]) : filename의 파일을 [options]의 방식으로 읽은 후 문자열을 반환합니다.(동기적) <br />
+* fs.writeFile(filename, data, [options], callback) : filename의 파일에 [options]의 방식으로 data 내용을 쓴 후 callback 함수를 호출합니다.(비동기적) <br />
+* fs.writeFileSync(filename, data, [options]) : filename의 파일에 [options]의 방식으로 data 내용을 씁니다.(동기적) <br />
 
 ---
 
