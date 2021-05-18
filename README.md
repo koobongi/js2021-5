@@ -2,6 +2,40 @@
 
 ## [05월 18일]
 
+#### 전역변수
+
+＊전역 변수, 전역 함수, 전역 객체 : 모든 곳에서 사용할 수 있는 것들 <br />
+> __filename : 헌재 실행 중인 코드의 파일 경로를 나타냅니다. <br />
+> __dirname : 현재 실행 중인 코드의 폴더 경로를 나타냅니다 <br />
+<br />
+
+#### process 객체의 속성과 이벤트
+
+![js.8.JPG](./img/js.8.JPG) <br />
+
+![js.9.JPG](./img/js.9.JPG) <br />
+
+![js.10.JPG](./img/js.10.JPG) <br />
+
+#### process 객체와 이벤트 개요
+
+Node.js의 이벤트 연결 메소드 <br />
+ex) on(<이벤트이름>,<이벤트 핸들러>) : 이벤트를 연결합니다. <br />
+process 객체의 이벤트 <br />
+ex)exit : 프로세스가 종료될 떄 발생합니다. <br />
+uncaughtException : 예외가 일어날 떄 발생합니다 <br />
+<br />
+Node.js가 제공하는 객체의 이벤트 : https://nodejs.org/en/docs/ <br />
+process 객체 : https://nodejs.org/dist/latest-v6.x/docs/api/process.html <br />
+<br />
+이벤트 매개 변수 : 이벤트 핸들러의 매개 변수로 전달되는 매개 변수
+
+>process.on('exit', (code) => { <br />
+  console.log(`About to exit with code: ${code}'); <br />
+}); <br />
+
+
+
 ---
 
 ## [05월 11일]
