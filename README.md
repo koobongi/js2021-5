@@ -1,5 +1,7 @@
 # 구본기 [201540202]
 
+## [05월 25일]
+
 ## [05월 18일]
 
 #### 전역변수
@@ -35,6 +37,15 @@ ex) exit 이벤트의 이벤트 매개 변수 <br />
   console.log(`About to exit with code: ${code}'); <br />
 }); <br />
 
+#### 모듈
+
+모듈이란 여러 기능들에 관한 코드가 모여있는 하나의 파일 로 다음과 같은 것들을 위해 사용한다. <br />
+* 유지보수성 : 기능들이 모듈화가 잘 되어있다면, 의존성을 그만큼 줄일 수 있기 때문에 어떤 기능을 개선한다거나 수정할 때 훨씬 편하게 할 수 있다. <br />
+* 네임스페이스화 : 자바스크립트에서 전역변수는 전역공간을 가지기 때문에 코드의 양이 많아질수록 겹치는 네임스페이스가 많아질 수 있다. 그러나 모듈로 분리하면 모듈만의 네임스페이스를 갖기 때문에 그 문제가 해결된다. <br />
+* 재사용성 : 똑같은 코드를 반복하지 않고 모듈로 분리시켜서 필요할 때마다 사용할 수 있다. <br />
+
+이런 장점들을 살리기 위해서 모듈 개념이 필요했고 자바스크립트에선 모듈을 개발하기 위한 여러가지 시도들이 있었다. <br />
+
 #### OS 모듈
 
 OS 모듈은 실제 개발에서 많이 사용되는 모듈은 아니지만 운영체제와 시스템의 정보를 가져올 수 있는 모듈입니다. CPU나 메모리, 디스크 용량이 얼마나 남았는지 확인이 필요할 때 사용합니다. 즉 사용자가 실행하는 환경에 따라서 값이 다르게 나옵니다.  <br />
@@ -57,6 +68,91 @@ OS 모듈은 실제 개발에서 많이 사용되는 모듈은 아니지만 운�
 * fs.readFileSync(filename, [options]) : filename의 파일을 [options]의 방식으로 읽은 후 문자열을 반환합니다.(동기적) <br />
 * fs.writeFile(filename, data, [options], callback) : filename의 파일에 [options]의 방식으로 data 내용을 쓴 후 callback 함수를 호출합니다.(비동기적) <br />
 * fs.writeFileSync(filename, data, [options]) : filename의 파일에 [options]의 방식으로 data 내용을 씁니다.(동기적) <br />
+<br />
+
+![js.14.JPG](./img/js.14.JPG) <br />
+
+![js.15.JPG](./img/js.15.JPG) <br />
+
+![js.16.JPG](./img/js.16.JPG) <br />
+
+![js.17.JPG](./img/js.17.JPG) <br />
+
+◆ 비동기 처리의 장점 <br />
+* 웹 서버를 C++ 프로그래밍 언어로 만들면 무척 빠르지만, 개발과 유지 보수는 어려움 <br />
+* 전 세계 웹 서비스 기업(페이스북,트위처 등)도 C++로 웹 서버를 개발하지 않고 PHP, 자바, 루비, 파이썬, Node.js 등 프로그래밍 언어로 개발 <br />
+* 프로그래밍 언어 자체는 느리지만 큰 의미가 없다고 판단해 개발 속도와 유지보수성이 좋은 프로그래밍 언어를 사용 <br />
+* 자바스크립트 프로그래밍 언어는 C++, 자바 보다느리지만 Node.js를 사용하면 손쉽게 비동기 처리를 구현하여 빠른 처리가 가능 <br />
+<br />
+
+###### 파일 읽기
+
+메소드 : <br />
+fs.readFileSync(<파일이름>) : 동기적으로 파일을 읽어 들입니다. <br />
+fs.readFile(<파일이름>,<콜백함수>) : 비동기적으로 파일을 읽어 들입니다. <br />
+
+###### 파일 쓰기
+
+메소드 : <br />
+fs.writeFileSync(<파일이름>,<문자열>) : 동기적으로 파일을 씁니다. <br />
+fs.writeFile(<파일이름><문자열>,<콜백함수>) : 비동기적으로 파일을 씁니다. <br />
+<br />
+
+#### 노드 패키지 매니저
+
+* 과거의 프로그래밍 언어들은 외부 모듈 설치가 어려웠음 <br />
+* 현재는 '패키지 매니저' 모듈 관리 프로그램을 사용해 모듈을 쉽게 설치하고 활용 가능 <br />
+* Node.js는 npm(Node.js Package Manager) 패키지 매니저를 사용 <br />
+* npm을 이용한 외부 모듈 설치 <br />
+> npm install <모듈 이름> : 예시)npm install express <br />
+* 명령어 뒤에 @ 기호를 사용하면 원하는 버전을 설치 <br />
+> npm install  <모듈 이름>@<버전> : 예시) npm install express@4 , npm istall express@4.2 <br />
+
+#### request 모듈
+
+웹 요청을 쉽게 만들어주는 모듈로 외부 모듈 <br />
+> 설치법 <br />
+npm install request <br />
+request 모듈 추출 <br />
+const request = require('request'); <br />
+<br />
+
+코드 실행 전에 npm install request 명령어를 실행해서 request 모듈을 설치 <br />
+> ex) const request = require('request'); //모듈을 추출합니다. <br />
+// request 모듈을 사용합니다 <br />
+const url = 'http://www.hanbit.co.kr/store/books/new_book_list.html'; <br />
+request(url, (error, response, body) => { <br />
+  console.log(body); <br />
+}); <br />
+
+![js.18.JPG](./img/js.18.JPG) <br />
+
+#### cheerio 모듈
+
+자신이 원하는 정보만을 가져올 수 있다 <br />
+
+![js.19.JPG](./img/js.19.JPG) <br />
+
+![js.20.JPG](./img/js.20.JPG) <br />
+
+#### async 모듈
+
+Async 모듈을 사용하면 콜백들을 순차적으로 파이프라이닝 하면서 실행 할 수 있다. 또한 parallel 함수 등을 통해 병렬로 작업을 진행하여 통합할 수도 있고, 비동기 루프를 동기적으로 만들어 실행 할 수도 있다. <br />
+ $ npm install async // Node.js <br />
+ <br />
+ $ bower install async // bower <br />
+일반적인 웹 브라우져에서 사용할 때는 bower 등을 통해 async 모듈을 다운받아 html에서 script로 불러와 사용하면 되고, nodejs에서 사용할 때는 npm 으로 설치하여 모듈을 불러오면 된다. <br />
+
+###### 흐름제어 메서드 
+
+async의 흐름 제어 메서드는 다양한 종류가 있다 <br />
+ex) XXXLimit : 한번에 처리 하는 Worker 갯수 지정 <br />
+XXXSeries : 한개씩 처리 <br />
+waterfall : 여러 비동기 처리를 순차적으로 처리 <br />
+parallel : 콜렉션을 병렬 처리 <br />
+apply : 인수 처리 <br />
+map : 새로운 컬렉션을 생성 <br />
+이 외에도 많은 기능이 제공된다. <br />
 
 ---
 
