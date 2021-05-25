@@ -1,6 +1,118 @@
 # 구본기 [201540202]
 
+## [06월 01일]
+
 ## [05월 25일]
+
+#### express 모듈
+
+express 모듈의 기본 메소드 <br />
+express() : 서버 애플리케이션 객체를 생성합니다. <br />
+app.use() : 요청이 왔을 때 실행할 함수를 지정합니다. <br />
+app.listen() : 서버를 실행합니다. <br />
+<br />
+ex)
+
+> const express = require('express); // 모듈을 추출합니다 <br />
+const app = express(); // 서버를 생성합니다 <br />
+app.use((request, response) => {  // 이벤트 리스너를 설정합니다 <br />
+  response.send('Hello express'); <br />
+}); <br />
+app.listen(52273, () => { // 서버를 실행합니다 <br />
+  console.log('Server running at http://127.0.0.1:52273'); <br />
+}) <br />
+웹 브라우저 실행 http://127.0.0.1:52273 or http://localhost:52273 접속 <br />
+결과 : Hello express <br />
+
+#### 페이지 라우팅
+
+클라이언트 요청에 적절한 페이지를 제공하는 기술 <br />
+express 모듈의 페이지 라우팅 메소드 <br />
+* get(path, callback) : GET 요청이 발생했을 떄 이벤트 리스너를 지정합니다. <br />
+* post(path, callback) : POST 요청이 발생했을 떄 이벤트 리스너를 지정합니다. <br />
+* put(path, callback) : PUT 요청이 발생했을 떄 이벤트 리스너를 지정합니다. <br />
+* delete(path, callback) : DELETE 요청이 발생했을 떄 이벤트 리스너를 지정합니다. <br />
+* all(path, callback) : 모든 요청이 발생했을 떄 이벤트 리스너를 지정합니다. <br />
+페이지 라우팅을 할떄 토큰을 활용 <br />
+':<토큰이름>'형태로 설정 <br />
+토큰은 다른 문자열로 변환 입력가능, request 객체의 params 속성으로 전달됨 <br />
+
+#### response 객체
+
+response 객체의 기본 메소드 <br />
+send() : 데이터 본문을 제공합니다. <br />
+status() : 상태 코드를 제공합니다. <br />
+set() : 헤더를 설정합니다. <br />
+send() 메소드는 가장 마지막에 실행하야 하며, 두번 실행할 수 없음 <br />
+
+#### Content-Type
+
+서버가 Content-Type을 제공 : 웹 브라우저는 헤더를 확인, 제공된 데이터의 형태를 확인 <br />
+MIME 형식 <br />
+>text/plain : 기본적인 텍스트를 의미합니다. <br />
+text/html : html 데이터를 의미합니다. <br />
+image/png : png 데이터를 의미합니다. <br />
+audio/mpe : MP3 음학 파일을 의미합니다. <br />
+video/mpeg : MPEG 비디오 파일을 의미합니다. <br />
+application/json : json 데이터를 의미합니다. <br />
+multipart/form-data : 입력 양식 데이터를 의미합니다. <br />
+type() : Content-Type을 MIME 형식으로 지정합니다. <br />
+<br />
+
+#### HTTP 상태 코드 : 404 Not Found
+
+상태코드 : 서버가 클라이언트에 '해당 경로는 이러한 상태'라고 알려주는 용도 <br />
+상태코드의 예 <br />
+HTTP 상태코드 / 설명 / 예 <br />
+* 1XX 처리중 100Contnue <br />
+* 2XX 성공 200OK <br />
+* 3XX 리다이렉트 300 Multiple Choices <br />
+* 4XX 클라이언트오류 400 Bad Request <br />
+* 5XX 서버오류 500 Internal Server Error <br />
+
+status() : 상태 코드를 지정합니다. <br />
+<br />
+리다이렉트 : 3XX, 특수한 상태 코드 <br />
+
+* 웹 브라우저가 리다이렉트를 확인하면 화면을 출력하지 않고, 응답 헤더에 있는 Location 속성을 확인해서 해당 위치로 이동 <br />
+* 특정 경로로 웹 브라우저를 인도 할 때 사용 <br />
+redirect() : 리다이렉트합니다. <br />
+
+#### request 객체
+
+![js.21.JPG](./img/js21.JPG) <br />
+
+네이버에서 '초콜릿' 문자를 검색 : https://search.naver.comsearch.naver?where=nexearch&query=초콜릿&sm=top_hty&fbm=0&ie=utf8 <br />
+주소를 분석 <br />
+분류 / 값 / 설명 <br />
+프로토콜 / HTTPS / 통신에 사용되는 규칙을 의미합니다. <br />
+호스트 / (search.)naver.com / 애플리케이션 서버(또는 분산 장치 등)의 위치를 의미합니다. <br />
+URL / search.naver / 애플리케이션 서버 내부에서 라우트 위치를 나타냅니다. <br />
+요청 매개 변수 / ?where=nexearch&query=초콜릿&sm=top_hty&fbm=0&ie=utf8 / 추가적인 정보를 의미합니다. <br />
+<br />
+
+#### 미들웨어
+
+미들웨어 설정 메소드 : use() = 미들웨어를 설정합니다 <br />
+
+##### 정적 파일 제공
+
+웹 페이지에서 변경되지 않는 요소(이미지,음악,자바스크립트 파일,스타일시트파일 등)를 쉽게 제공 <br />
+
+##### morgan 미들웨어
+
+morgan 미들웨어 : 로그 출력 미들웨어 <br />
+로그 : 관련된 정보를 가진 글자 <br />
+로그 출력 미들웨어 : 웹 요청과 관련된 내용을 출력하는 미들웨어 <br />
+
+##### body-parser 미들웨어
+
+![js.22.JPG](./img/js.22.JPG) <br />
+
+![js.23.JPG](./img/js.23.JPG) <br />
+
+<br />
+
 
 ## [05월 18일]
 
